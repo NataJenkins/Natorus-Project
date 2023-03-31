@@ -29,6 +29,13 @@
             background-color: $color-white;
         }
     }
+    &-green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+        }
+    }
 
     &::after {
         content: "";
@@ -63,11 +70,11 @@
     &:hover {
         background-color: $color-primary;
         color: white;
-        box-shadow: 0 1rem 10px rgba($color-black, 0.15);
+        box-shadow: $shadow-1;
         transform: translateY(-2px);
     }
     &:active {
-        box-shadow: 0 1rem 10px rgba($color-black, 0.15);
+        box-shadow: $shadow-1;
         transform: translateY(0);
     }
 }
