@@ -1,11 +1,42 @@
-* {
+/*
+0 - 600px:      phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet Landscape
+
+1800+:          Big desktop
+
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+html {
+  font-size: 62.5%; }
+  @media (max-width: 27em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 10%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
 body {
-  color: #777;
-  padding: 30px; }
+  box-sizing: border-box; }
 
 @keyframes moveInLeft {
   0% {
@@ -47,17 +78,17 @@ body {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 60px; }
+  margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
     letter-spacing: 35px;
     animation-name: moveInLeft;
     animation-duration: 1s; }
   .heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 17.4px;
     animation: moveInRight 1s ease-out; }
