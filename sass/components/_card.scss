@@ -1,9 +1,74 @@
+// .card {
+//     //Functionality
+//     perspective: 150rem;
+//     --moz-perspective: 150rem;
+//     position: relative;
+//     height: 52rem;
+
+//     border: 8px solid red;
+
+//     &__side {
+//         height: 52rem;
+//         transition: all 0.8s ease;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         backface-visibility: hidden;
+//         border-radius: 3px;
+//         overflow: hidden;
+//         box-shadow: $shadow-1;
+
+//         &--front {
+//             background-color: $color-white;
+//         }
+//         &--back {
+//             transform: rotateY(180deg);
+//             &-1 {
+//                 background-image: linear-gradient(
+//                     to right bottom,
+//                     $color-secondary-light,
+//                     $color-secondary-dark
+//                 );
+//             }
+//             &-2 {
+//                 background-image: linear-gradient(
+//                     to right bottom,
+//                     $color-primary-light,
+//                     $color-primary-dark
+//                 );
+//             }
+//             &-3 {
+//                 background-image: linear-gradient(
+//                     to right bottom,
+//                     $color-tertiary-light,
+//                     $color-tertiary-dark
+//                 );
+//             }
+//         }
+//     }
+//     &:hover &__side--front {
+//         transform: rotateY(-180deg);
+//     }
+//     &:hover &__side--back {
+//         transform: rotateY(0);
+//     }
 .card {
-    //Functionality
-    perspective: 150rem;
-    --moz-perspective: 150rem;
     position: relative;
+    perspective: 150rem;
     height: 52rem;
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__inner {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+    }
 
     &__side {
         height: 52rem;
@@ -15,42 +80,38 @@
         backface-visibility: hidden;
         border-radius: 3px;
         overflow: hidden;
-        box-shadow: $shadow-1;
 
         &--front {
-            background-color: $color-white;
+            background-color: white;
         }
         &--back {
             transform: rotateY(180deg);
-            &-1 {
-                background-image: linear-gradient(
-                    to right bottom,
-                    $color-secondary-light,
-                    $color-secondary-dark
-                );
-            }
-            &-2 {
-                background-image: linear-gradient(
-                    to right bottom,
-                    $color-primary-light,
-                    $color-primary-dark
-                );
-            }
-            &-3 {
-                background-image: linear-gradient(
-                    to right bottom,
-                    $color-tertiary-light,
-                    $color-tertiary-dark
-                );
-            }
+            background-image: linear-gradient(
+                to right bottom,
+                #7ed56f,
+                #28b485
+            );
         }
     }
-    &:hover &__side--front {
+
+    /* ROTACION ON CLICK */
+    &__checkbox:checked + .card__inner .card__side--front {
         transform: rotateY(-180deg);
     }
-    &:hover &__side--back {
+
+    &__checkbox:checked + .card__inner .card__side--back {
         transform: rotateY(0);
     }
+
+    /* ROTACION ON HOVER */
+    // INDEX INPUT LINEA 211
+
+    //     &:hover &__side--front {
+    //         transform: rotateY(-180deg);
+    //     }
+    //     &:hover &__side--back {
+    //         transform: rotateY(0);
+    //     }
 
     //Front side styling
     &__picture {
